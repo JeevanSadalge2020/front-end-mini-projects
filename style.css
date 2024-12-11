@@ -13,6 +13,11 @@ body {
   align-items: center;
 }
 
+ul li {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
 h1 {
   text-transform: capitalize;
   margin-bottom: 2rem;
