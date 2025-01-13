@@ -2,6 +2,15 @@ const resultPara = document.querySelector(".result");
 const list = document.querySelector("ul");
 let rollCount = 0;
 
+let dice_map = new Map();
+
+dice_map.set(1, "fa-dice-one");
+dice_map.set(2, "fa-dice-two");
+dice_map.set(3, "fa-dice-three");
+dice_map.set(4, "fa-dice-four");
+dice_map.set(5, "fa-dice-five");
+dice_map.set(6, "fa-dice-six");
+
 function generateRandomNumber(maxInt) {
   return Math.floor(Math.random() * maxInt) + 1;
 }
@@ -25,7 +34,8 @@ function displayRollDiceResult() {
 
   li.append(roll_number_header, dice_roll_result);
   list.appendChild(li);
-  resultPara.textContent = dice_roll_result;
+  resultPara.innerHTML = `<i class="fa-solid"></i>`;
+  resultPara.querySelector("i").classList.add(dice_map.get(dice_roll_result));
 }
 
 const button = document.querySelector("button");
