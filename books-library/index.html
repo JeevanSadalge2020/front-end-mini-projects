@@ -7,28 +7,26 @@
     <script src="./app.js" defer></script>
     <title>Books</title>
   </head>
+
   <body>
-    <header><h1>Book Library</h1></header>
+    <header>
+      <h1>Book Library</h1>
+    </header>
     <main>
-      <section class="filter-and-search"><h1>Nothing here for now</h1></section>
+      <section class="filter-and-search">
+        <h1>Nothing here for now</h1>
+        <div>
+          <input
+            type="text"
+            name="book-filter"
+            id="book-filter"
+            placeholder="Search books via author or title"
+          />
+          <button>Search</button>
+        </div>
+      </section>
       <section>
-        <ul class="books grid">
-          <li>
-            <div class="book-image">
-              <img
-                src="http://books.google.com/books/content?id=Z3jADwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-                alt="book-image"
-                srcset=""
-              />
-            </div>
-            <div class="book-content">
-              <h4>Atomic Habits</h4>
-              <p>Author: James Clear</p>
-              <p>Publisher: Springer</p>
-              <p>Publish Date: Jan 12 2008</p>
-            </div>
-          </li>
-        </ul>
+        <ul class="books grid"></ul>
       </section>
     </main>
   </body>

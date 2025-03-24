@@ -13,19 +13,41 @@ img {
   height: 100%;
 }
 
+button {
+  padding: 5px 20px;
+  border: none;
+  background-color: darkcyan;
+  color: white;
+  border-radius: 2px;
+}
+
+button:hover {
+  opacity: 0.85;
+  cursor: pointer;
+}
+
+input {
+  padding: 4px;
+}
+
+#book-filter {
+  width: 200px;
+}
+
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 200px);
+  grid-template-columns: repeat(auto-fit, 300px);
   gap: 10px;
 }
 
 .books li {
   display: grid;
-  grid-template-rows: 60% 40%;
+  grid-template-rows: 200px minmax(150px, auto);
   gap: 5px;
   padding-left: 5px;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  overflow: hidden; /* Hide overflow */
 }
 
 .book-image {
