@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+img {
+  height: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 200px);
+  gap: 10px;
+}
+
+.books li {
+  display: grid;
+  grid-template-rows: 60% 40%;
+  gap: 5px;
+  padding-left: 5px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+
+.book-image {
+  /* border: 1px solid red; */
+  text-align: center;
+}
+
+.book-content {
+  /* border: 1px solid pink; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
