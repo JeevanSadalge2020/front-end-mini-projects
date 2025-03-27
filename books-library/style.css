@@ -38,6 +38,7 @@ input {
   display: grid;
   grid-template-columns: repeat(auto-fit, 300px);
   gap: 10px;
+  justify-content: center;
 }
 
 .books li {
@@ -60,4 +61,15 @@ input {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+}
+
+section {
+  width: 100%;
+  border: 1px solid black;
+}
+
+.filter-and-search,
+header {
+  text-align: center;
+  padding: 1rem;
 }

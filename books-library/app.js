@@ -1,31 +1,33 @@
 // const fetch = require("node-fetch");
 
 const url =
-  "https://api.freeapi.app/api/v1/public/books?page=1&limit=2&inc=kind%252Cid%252Cetag%252CvolumeInfo";
+  "https://api.freeapi.app/api/v1/public/books?page=1&limit=50&inc=kind%252Cid%252Cetag%252CvolumeInfo";
 const options = { method: "GET", headers: { accept: "application/json" } };
 
-const searchBtn = document.querySelector("#book-filter");
+const searchBtn = document.querySelector("#searchBtn");
 const searchInput = document.querySelector("input");
 const ul = document.querySelector("ul");
 
-let searchBooks = function () {
-  fetch_books().then(({ data }) => {
-    const books = data.data.filter((book) => {
-      let authors = book["volumeInfo"].authors.toString().toLowerCase();
-      let title = book["volumeInfo"].title.toLowerCase();
-      console.log(authors, title);
-      //   if (authors.includes(searchInput.value.toLowerCase())) {
-      //     return book;
-      //   } else if (title.includes(searchInput.value.toLowerCase())) {
-      //     return book;
-      //   }
-    });
-    console.log("books", books);
-  });
-};
+let searchBooks = function () {};
 
 searchBtn.addEventListener("click", (e) => {
-  searchBooks();
+  fetch_books().then(({ data }) => {
+    const books = data.data.filter((book) => {
+      let authors = book["volumeInfo"].authors
+        .toString()
+        .toLowerCase()
+        .split(" ");
+      let title = book["volumeInfo"].title.toLowerCase().split(" ");
+      let seachText = searchInput.value.toLowerCase();
+      //   console.log("title", title);
+      //   console.log("searchInput", searchInput.value.toLowerCase());
+      if (authors.includes(seachText) || title.includes(seachText)) {
+        console.log("==");
+        return book;
+      }
+    });
+    displayBooks(books);
+  });
 });
 
 async function fetch_books() {
@@ -47,6 +49,7 @@ fetch_books()
   .catch((error) => console.log(error.message));
 
 function displayBooks(bookList) {
+  ul.textContent = "";
   bookList.forEach((book) => {
     const { title, authors, publisher, publishedDate, infoLink } =
       book["volumeInfo"];
@@ -74,7 +77,13 @@ function displayBooks(bookList) {
     bookImage_ele.setAttribute("class", "book-image");
 
     heading_ele.textContent = title;
-    author_ele.textContent = `Author: ${authors?.toString() || "Unknown"}`;
+    author_ele.textContent = `Author: ${
+      authors
+        ? authors.length <= 3
+          ? authors?.toString()
+          : authors.slice(0, 3).toString() + " and others"
+        : "Unknown"
+    }`;
     publisher_ele.textContent = `Publisher: ${publisher || "Unknown"}`;
     if (month && year) {
       publishDate_ele.textContent = `Publish Date: ${month}, ${year}`;
