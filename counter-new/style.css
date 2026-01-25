@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 1mm;
+  text-transform: capitalize;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: coral;
+}
+
+.container {
+  text-align: center;
+  padding: 2rem;
+  background-color: cornsilk;
+  border-radius: 1rem;
+}
+
+#counter {
+  font-size: 4rem;
+  color: dimgray;
+}
+
+button {
+  background-color: cadetblue;
+  padding: 5px 10px;
+  border-radius: 1rem;
+  border: 1px solid cadetblue;
+  color: white;
+  transition: all 0.3s ease-in-out;
+  letter-spacing: 0.1ch;
+}
+
+.btn-container {
+  margin-top: 1rem;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: whitesmoke;
+  color: cadetblue;
+}
