@@ -25,16 +25,12 @@ body {
     "Helvetica Neue",
     sans-serif;
   min-height: 100vh;
-  padding: 1rem;
+  padding-top: 200px;
   background: linear-gradient(
     to bottom,
     var(--color-bg-start),
     var(--color-bg-end)
   );
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -56,12 +52,13 @@ body {
 }
 
 .card {
-  width: 90%;
-  max-width: 400px;
+  margin: auto;
+  /* margin-top: 200px; */
+  max-width: 340px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
   text-align: center;
 
   background-color: var(--color-card-bg);
